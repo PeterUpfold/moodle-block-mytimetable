@@ -114,10 +114,11 @@ class block_mytimetable extends block_base {
      * Get JavaScript required for this block.
      */
     public function get_required_javascript() {
+	    global $USER;
 	    parent::get_required_javascript();
 	    $arguments = [ 'instanceid' => $this->instance->id ];
 
-	    $this->page->requires->js_call_amd('block_mytimetable/mytimetable_modal', 'init');
+	    $this->page->requires->js_call_amd('block_mytimetable/mytimetable_modal', 'init', [ (new \moodle_url('/report/parentprogressview/timetable.php'))->__toString(), $USER->username ]);
     }
 }
 
