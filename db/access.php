@@ -25,6 +25,15 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
+ 
+    'block/mytimetable:view' => [
+	    'captype' => 'read',
+	    'contextlevel' => CONTEXT_SYSTEM,
+	    'archetypes' => [
+		    'user' => CAP_ALLOW
+	    ],
+	    'clonepermissionsfrom' => 'moodle/block:view'
+    ],
 
     'block/mytimetable:myaddinstance' => array(
         'captype' => 'write',

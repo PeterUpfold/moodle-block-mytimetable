@@ -16,10 +16,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_mentees', language 'en', branch 'MOODLE_20_STABLE'
+ * Strings for component 'block_mytimetable', lang 'en'
  *
  * @package   block_mytimetable
- * @copyright 2018 Test Valley School
+ * @copyright 2018-19 Test Valley School
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -32,4 +32,7 @@ $string['introtext'] = 'View your current achievement points totals';
 $string['newmytimetableblock'] = '(new My Timetable block)';
 $string['pluginname'] = 'My Timetable';
 $string['notloggedin'] = 'You need to be logged in with a pupil account to see these details.';
-
+$string['modaltitle'] = 'Timetable';
+$string['timetable404'] = 'A timetable for you was not found in the system. It may not have been made available yet.';
+$string['timetablefailure'] = 'Moodle was unable to fetch your timetable from the system. Please try again later.';
+$string['mytimetable:view'] = 'View the My Timetable block';

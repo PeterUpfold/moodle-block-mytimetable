@@ -81,6 +81,14 @@ class block_mytimetable extends block_base {
 		$this->content->footer = '';
 		return $this->content;
 	}
+	/* use the capability mytimetable:view to suppress for users unlikely to have their **own** timetable. Use Prohibit when 	
+	 * setting this in a system-defined role to have this prevention of the capability flow down to the block
+	 * instance context. */
+	if (!has_capability('block/mytimetable:view', context_block::instance($this->instance->id))) {
+		$this->content->text = '';
+		$this->content->footer = '';
+		return $this->content;
+	}
 
 	// are the block's global config options configured correctly? if not, fail early
 	if (!$this->is_configured()) {
@@ -91,6 +99,7 @@ class block_mytimetable extends block_base {
 
 	// data for template
 	$data = new \stdClass();
+
 
 	// normal rendering if we have data
 	$renderer = $this->page->get_renderer('block_mytimetable');
