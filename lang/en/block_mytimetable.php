@@ -36,3 +36,4 @@ $string['modaltitle'] = 'Timetable';
 $string['timetable404'] = 'A timetable for you was not found in the system. It may not have been made available yet.';
 $string['timetablefailure'] = 'Moodle was unable to fetch your timetable from the system. Please try again later.';
 $string['mytimetable:view'] = 'View the My Timetable block';
+$string['printlink'] = '<a href="{$a}" target="_blank" title="Opens printer-friendly timetable"><i class="icon fa fa-print fa-fw" title="Opens printer-friendly timetable" aria-label="Opens printer-friendly timetable"></i> Print</a>';

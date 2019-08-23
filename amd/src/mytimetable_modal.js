@@ -38,6 +38,10 @@ define(['jquery', 'core/modal_factory', 'core/ajax', 'core/str'], function($, Mo
                 {
                     key: 'timetablefailure',
                     component: 'block_mytimetable'
+                },
+                {
+                    key: 'printlink',
+                    component: 'block_mytimetable'
                 }
             ];
 
@@ -52,7 +56,12 @@ define(['jquery', 'core/modal_factory', 'core/ajax', 'core/str'], function($, Mo
                             $.ajax(timetableUrl + '?username=' + encodeURIComponent(user))
                         ).then(
                             function(content, textStatus, jqXHR) {
-                                modal.setBody(content);
+
+                                var printLink = lang[3]; // printlink
+                                var printHref = timetableUrl + '?username=' + encodeURIComponent(user) + '&amp;action=invokeprint';
+                                printLink = printLink.replace('{$a}', printHref);
+
+                                modal.setBody(printLink + content);
                             },
                             function(jqXHR, textStatus, errorThrown) {
                                 // failed
